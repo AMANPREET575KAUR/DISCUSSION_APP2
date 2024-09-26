@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Discussion App</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Ask a Question</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">All Questions</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Container for discussion app -->
+    <div class="container">
+        <!-- Left Pane (Search & Question List) -->
+        <div class="left-pane">
+            <input type="text" id="searchBox" placeholder="Search questions...">
+            <h2>Questions</h2>
+            <ul id="questionList"></ul>
+        </div>
+
+        <!-- Right Pane (Question Form / Response Form) -->
+        <div class="right-pane">
+            <div id="questionForm">
+                <h2>Welcome to Discussion Portal</h2>
+                <form id="askQuestionForm">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" required>
+                    <label for="question">Question:</label>
+                    <textarea id="question" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div id="responseSection" style="display: none;">
+                <h2 id="selectedQuestionTitle"></h2>
+                <p id="selectedQuestionBody"></p>
+
+                <form id="responseForm">
+                    <h3>Respond to the Question</h3>
+                    <label for="responderName">Name:</label>
+                    <input type="text" id="responderName" required>
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" required></textarea>
+                    <button type="submit">Submit Response</button>
+                </form>
+
+                <h3>Previous Responses</h3>
+                <ul id="responseList"></ul>
+
+                <button id="resolveBtn">Resolve</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
